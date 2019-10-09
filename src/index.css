@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:500|Noto+Sans+KR:300,500&display=swap');
 
 body {
   margin: 0 !important;
   padding: 0px !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
 
 }
 html, body, #app, #app>div {

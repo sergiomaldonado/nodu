@@ -11,6 +11,8 @@ import SingOutButton from './SingOut'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NavBar from './appComponents/navBar.js'
+import MenuPrincipalHome from './appComponents/menuPrincipalHome.js'
+import BottomNavBar from './appComponents/bottomNavBar.js';
 
 
 
@@ -35,8 +37,10 @@ class HomePage extends Component {
        return(
         
           <div>
-           <NavBar></NavBar>
-           <h1>Hola Raymundo</h1>
+           <NavBar/>
+           <MenuPrincipalHome/>
+           <BottomNavBar/>
+           
           </div>
             )
   }

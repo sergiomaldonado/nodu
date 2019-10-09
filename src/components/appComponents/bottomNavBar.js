@@ -6,11 +6,11 @@ import { auth } from '../../firebase'
 import SingOutButton from './../SingOut'
 
 
-const NavBar = () => {
+const BottomNavBar = () => {
    
    return(
       <div>
-      <Navbar style={{backgroundColor:"#0A369C"}} variant="dark">
+      <Navbar fixed="bottom" style={{backgroundColor:"#0A369C"}} variant="dark">
         <Navbar.Brand href="#home">Nodu</Navbar.Brand>
          <Nav className="mr-auto"> 
          </Nav>
@@ -22,6 +22,6 @@ const NavBar = () => {
 }
 
  
- export default NavBar
+ export default BottomNavBar
  
 
