@@ -10,7 +10,7 @@ const BottomNavBar = () => {
    
    return(
       <div>
-      <Navbar fixed="bottom" style={{backgroundColor:"#0A369C"}} variant="dark">
+      <Navbar fixed="bottom" style={{backgroundColor:"white"}} variant="dark">
         <Navbar.Brand href="#home">Nodu</Navbar.Brand>
          <Nav className="mr-auto"> 
          </Nav>
