@@ -130,7 +130,7 @@ class HomePage extends Component {
               /** Aqui se gestiona el contenido de la barra de navegacion superior, el contenido cambia segun
               la vista que esta activada, se para por propiedades los parametros al componente hijo */
               
-              <NavBar Contenido={this.state.contenidoNav}
+              <NavBar style={{ zIndex:"999" }} Contenido={this.state.contenidoNav}
               /** Pasa al componente el contenido que tiene que mostrar en la nav */
               homeNavContent={this.state.homeNavContent}
               bitacoraNavContent={this.state.bitacoraNavContent}

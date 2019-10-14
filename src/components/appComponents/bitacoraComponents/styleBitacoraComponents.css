@@ -1,0 +1,23 @@
+.acordeonCard {
+    border-radius: 0px !important;
+    border: none;
+    color: white;
+}
+
+.contenidoAcordeon {
+    color: black
+}
+
+.textTarea {
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.modalConfirmacion {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    z-index: 99999;
+    margin-top: -56px;
+}
