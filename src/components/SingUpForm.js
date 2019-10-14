@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigation from './Navigation'
 import './App.css';
 import { auth, db } from './../firebase'
 import {Form, Row, Col,Navbar,Button} from 'react-bootstrap'
@@ -9,7 +8,7 @@ import {
   } from 'react-router-dom';
   import * as routes from '../constants/routes';
 
-import { Mail, Bell, Power, ChevronLeft } from 'react-feather';
+import { ChevronLeft } from 'react-feather';
 
 
 const SignUpPage = ({ history }) =>
@@ -60,7 +59,6 @@ class SignUpForm extends Component {
                 apellido,
                 email,
                 telefono,
-                matricula,
                 passwordOne,
                 domicilio
               } = this.state;
@@ -95,24 +93,12 @@ class SignUpForm extends Component {
                 apellido,
                 email,
                 telefono,
-                matricula,
-                pacientes,
-                dietas,
-                recetas,
-                agenda,
                 passwordOne,
                 passwordTwo,
                 error,
                 domicilio,
               } = this.state;
-              const isInvalid =
-              passwordOne !== passwordTwo ||
-              passwordOne === '' ||
-              email === '' ||
-              telefono === '' ||
-              matricula === '' ||
-              apellido === ''
-              nombre === '';
+             
            
             
           return (

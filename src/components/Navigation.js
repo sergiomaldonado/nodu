@@ -1,11 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './App.css';
-import SingOutButton from './SingOut';
-import * as routes from '../constants/routes';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Button, Badge, } from 'react-bootstrap';
-import { Mail, Bell, Power, MoreVertical } from 'react-feather';
-import { db, auth } from '../firebase/firebase';
+import { Navbar } from 'react-bootstrap';
 import AuthUserContext from './AuthUserContext';
 
 

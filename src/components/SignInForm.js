@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { SignUpLink } from './SingUpForm';
 import { auth } from '../firebase';
 import * as routes from '../constants/routes';
-import Navigation from './Navigation'
-import {Form, Row, Col, Navbar, Button} from 'react-bootstrap'
-import {ChevronLeft} from 'react-feather'
+import {Form,Button} from 'react-bootstrap'
 import {
-  Link,
   withRouter,
 } from 'react-router-dom';
 
@@ -61,10 +58,7 @@ class SignInForm extends Component {
       error,
     } = this.state;
 
-    const isInvalid =
-      password === '' ||
-      email === '';
-
+   
     return (
       <div>
      
@@ -72,12 +66,12 @@ class SignInForm extends Component {
 <Form onSubmit={this.onSubmit}>
   <Form.Group controlId="formBasicEmail">
    
-    <Form.Control  value={email} onChange={event => this.setState(byPropKey('email', event.target.value))} type="text" placeholder="Email Address" type="email" placeholder="Usuario" />
+    <Form.Control  value={email} onChange={event => this.setState(byPropKey('email', event.target.value))}  type="email" placeholder="Usuario" />
   </Form.Group>
 
   <Form.Group controlId="formBasicPassword">
     
-    <Form.Control value={password} onChange={event => this.setState(byPropKey('password', event.target.value))} type="password" placeholder="Password" type="password" placeholder="Contraseña" />
+    <Form.Control value={password} onChange={event => this.setState(byPropKey('password', event.target.value))}  type="password" placeholder="Contraseña" />
   </Form.Group>
  
   <Button style={{ width:"100%" }}variant="primary" type="submit">

@@ -1,4 +1,4 @@
-import { db, auth } from './firebase';
+import { db} from './firebase';
 
 // User API
 
@@ -11,9 +11,6 @@ export const doCreateUser = (id, nombre, apellido, email, telefono, domicilio) =
     domicilio
     
   });
-
-
-  const uid = () => auth.currentUser.uid
 
 export const onceGetUsers = () =>
 

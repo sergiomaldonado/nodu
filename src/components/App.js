@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
-import Navigation from './Navigation'
 import Landing from './Landing'
 import Home from './Home'
 import Singin from './SingInPage'
 import Singup from './SingUpPage'
 import Acount from './acount'
 import * as routes from '../constants/routes'
-import { firebase } from '../firebase';
 import withAuthentication from './withAutentication'
 
 const App = () =>

@@ -1,27 +1,55 @@
 import React, { Component } from 'react'
 import './../App.css'
-import {Container, Row, Col, Button,Navbar,Nav,Form,FormControl, Image } from 'react-bootstrap'
-import { auth } from '../../firebase'
+import {Container, Row, Col, Navbar} from 'react-bootstrap'
 
-import SingOutButton from './../SingOut'
+import { Home, Bell, User} from 'react-feather';
+ 
 
 
-const BottomNavBar = () => {
+
+const estadoInicial = {
    
-   return(
-      <div>
-      <Navbar fixed="bottom" style={{backgroundColor:"white"}} variant="dark">
-        <Navbar.Brand href="#home">Nodu</Navbar.Brand>
-         <Nav className="mr-auto"> 
-         </Nav>
-          <Image style={{ width:"40px" }} src="http://lorempixel.com/200/200/" roundedCircle />
-          {/**<SingOutButton></SingOutButton>**/}
-      </Navbar> 
-      </div>
-   )
 }
 
- 
- export default BottomNavBar
+class BottomNavBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      ...estadoInicial
+    };
+  }
+  componentDidMount() { 
+    
+  }
+  
+  render() {
+       return(
+        
+          <div>
+          <Navbar className="bottomNav" expand="lg" variant="light" bg="light" fixed="bottom" sticky="bottom">
+          <Container>
+          <Container>
+            <Row>
+              <Col className="icon_bottomNav" md={4} xs={4}><Home onClick={()=>this.props.cambiarDeVistaHome(true, false, false)} size="25"/></Col>
+              <Col className="icon_bottomNav" md={4} xs={4}><Bell onClick={()=>this.props.cambiarDeVistaHome(false, true, false)} size="25"/></Col>
+              <Col className="icon_bottomNav" md={4} xs={4}><User onClick={()=>this.props.cambiarDeVistaHome(false, false, true)} size="25"/></Col>
+            </Row>
+          </Container>
+  </Container>
+</Navbar>
+           
+          </div>
+            )
+  }
+}
+
+
+
+
+
+export default BottomNavBar;
+
+
  
 
