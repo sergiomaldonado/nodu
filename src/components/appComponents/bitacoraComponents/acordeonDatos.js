@@ -34,7 +34,7 @@ class Acordeon extends Component {
                                        <Col  md={8} xs={8}>
                                        <h5 style={{ color:"#595656" }}>10:00 am</h5>
                                        <p className="textTarea">Contenido y horario de la tarea</p></Col>
-                                       <Col md={4} xs={4} style={{ textAlign:"center" }}> <Check style={{ color:"green" }}/> <X style={{ color:"red", marginLeft:"20px", }}/> </Col>
+                                       <Col md={4} xs={4} style={{ textAlign:"center" }}> <Check onClick={()=>this.props.activarModalConfirmacion(true, false)} style={{ color:"green" }}/> <X onClick={()=>this.props.activarModalConfirmacion(false, true)} style={{ color:"red", marginLeft:"20px", }}/> </Col>
                                 
                                 </Row>
                                 <Row style={{ borderBottom:"solid 1px #E1DFDF", marginTop:"10px" }}>
