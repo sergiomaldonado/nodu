@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import './../App.css'
 import {ButtonToolbar, ToggleButtonGroup, ToggleButton, Container, Row, Col, Card, Accordion} from 'react-bootstrap'
 import BotonToggle from './bitacoraComponents/botonToggle'
-import Acordeon from './bitacoraComponents/acordeonDatos'
+import AcordeonInfomacionDiaria from './bitacoraComponents/acordeonDatosInfomacionDiaria'
+import AcordeonInfomacionSemanal from './bitacoraComponents/acordeonDatosInformacionSemanal'
 import ModalConfirmacionTarea from './bitacoraComponents/modalConfirmacionTarea'
  const estadoInicial = {
    modalDeConfirmacionActivada:false,
    modalTareaCompletada:false,
-   modalTareaEliminada:false
+   modalTareaEliminada:false,
+   vistaDeDiaActivada:true
 }
 
 class Bitacora extends Component {
@@ -26,11 +28,17 @@ class Bitacora extends Component {
     this.setState({
       modalDeConfirmacionActivada:true, 
       modalTareaCompletada:completada,
-      modalTareaEliminada:eliminada
+      modalTareaEliminada:false
      
     })}
 
   desactivarModal = () =>{this.setState({modalDeConfirmacionActivada:false})}
+
+  cambiarVistaEnBitacora = (vistaActivada) =>{
+    this.setState({ 
+      vistaDeDiaActivada:vistaActivada
+    })
+  }
   
   render() {
        return(      
@@ -38,7 +46,7 @@ class Bitacora extends Component {
              {
                this.state.modalDeConfirmacionActivada === true
                ?<ModalConfirmacionTarea 
-               desactivarModal={(completada, eliminada)=>this.desactivarModal(completada, eliminada)}
+               desactivarModal={()=>this.desactivarModal()}
                confirmacionCompletada={this.state.modalTareaCompletada}
                confirmacionEliminada={this.state.modalTareaEliminada}
                />
@@ -48,11 +56,17 @@ class Bitacora extends Component {
               <Container>
                 <Row>
                   <Col style={{ paddingTop:"20px" }} md={12} xs={12}>
-                  <BotonToggle/>
+                  <BotonToggle cambiarVistaEnBitacora={ (vistaActivada)=>this.cambiarVistaEnBitacora(vistaActivada) }/>
                   </Col>
                 </Row>
               </Container>
-             <Acordeon activarModalConfirmacion={()=>this.activarModal()}/>
+
+              {
+                this.state.vistaDeDiaActivada === true
+                ?<AcordeonInfomacionDiaria  confirmacionCompletada={this.state.modalTareaCompletada} activarModalConfirmacion={(completada)=>this.activarModal(completada)}/>
+                :<AcordeonInfomacionSemanal  confirmacionCompletada={this.state.modalTareaCompletada} activarModalConfirmacion={(completada)=>this.activarModal(completada)}/>
+              }
+             
           </div>
             )
   }

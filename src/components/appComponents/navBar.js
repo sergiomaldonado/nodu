@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './../App.css'
 import {Navbar,Nav, Image } from 'react-bootstrap'
-import { ChevronLeft } from 'react-feather';
+import { ChevronLeft, Edit } from 'react-feather';
 
  const estadoInicial = {
    
@@ -26,7 +26,7 @@ class NavBar extends Component {
                {
                   this.props.homeNavContent === true 
                   ?  <Navbar style={{backgroundColor:"#0A369C"}} variant="dark">
-                     <Navbar.Brand href="#home">Nodu</Navbar.Brand>
+                     <Navbar.Brand href="#home">Cultiva</Navbar.Brand>
                      <Nav className="mr-auto"></Nav>
                      <Image style={{ width:"40px" }} src="http://lorempixel.com/200/200/" roundedCircle />
                      </Navbar>   
@@ -37,6 +37,7 @@ class NavBar extends Component {
                   ?  <Navbar style={{backgroundColor:"#0A369C"}} variant="dark">
                      <Navbar.Brand href="#home"> <ChevronLeft onClick={()=>this.props.volverAlHome()} size={25}/> Bitacora</Navbar.Brand>
                      <Nav className="mr-auto"></Nav>
+                     <Edit style={{ color:"white" }}/>
                      </Navbar>   
                   :null
                }

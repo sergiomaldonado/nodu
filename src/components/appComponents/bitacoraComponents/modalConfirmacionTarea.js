@@ -32,8 +32,8 @@ class ModalConfirmacionTarea extends Component {
                       <p>Se enviara una notificación al creador de esta tarea</p>
                    </div>
                    :<div>
-                      <h5>nada</h5>
-                     
+                   <h5>¿Seguro que quieres eliminar esta tarea?</h5>
+                      <p>Se enviara una notificación al creador de esta tarea</p>
                    </div>
                  }
                 </Card.Text>

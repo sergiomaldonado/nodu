@@ -23,8 +23,8 @@ class BotonToggle extends Component {
        return(      
           <ButtonToolbar style={{ margin:"0 auto !Important" }}>
           <ToggleButtonGroup   type="radio" name="options" defaultValue={1}>
-          <ToggleButton value={1}> Hoy </ToggleButton>
-          <ToggleButton value={2}> Semana</ToggleButton>
+          <ToggleButton onClick={()=> this.props.cambiarVistaEnBitacora(true)} value={1}> Hoy </ToggleButton>
+          <ToggleButton onClick={()=> this.props.cambiarVistaEnBitacora(false)} value={2}> Semana</ToggleButton>
           </ToggleButtonGroup>
           </ButtonToolbar>
             )

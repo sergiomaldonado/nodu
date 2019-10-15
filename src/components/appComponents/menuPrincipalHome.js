@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'react-bootstrap';
+import { Button,Badge } from 'react-bootstrap';
 import {ChevronRight,Book,Map,Box,ShoppingCart,BookOpen} from 'react-feather';
 import 'react-toastify/dist/ReactToastify.css';
 import './stylesAppComponents/menuPrincipalStyle.css'
@@ -24,17 +24,17 @@ class MenuPrincipalHome extends Component {
        return(
           <div style={{ marginTop:"15px" }}>
             <Button onClick={ ()=>this.props.activarBitacora() } className="botonMenuPrincipalHome" size="lg" block>
-              <span className="itemMenuPrincipal"><Book size="20" /> &nbsp; Bitacora</span>
+              <span className="itemMenuPrincipal"><Book size="20" /> &nbsp; Bitacora <Badge variant="success">1</Badge></span>
               <span style={{ float:"right", marginTop:"-2px" }}> <ChevronRight/> </span>
             </Button>
             <hr style={{ width:"87%", borderBottom:"solid #E1DFDF 0.5px", float:"right",  }}/>
             <Button onClick={ ()=>this.props.activarMisParcelas() } className="botonMenuPrincipalHome" size="lg" block>
-              <span className="itemMenuPrincipal" > <Map size="20" />  &nbsp; Mis Parcelas</span>
+              <span className="itemMenuPrincipal" > <Map size="20" />  &nbsp; Parcelas</span>
               <span style={{ float:"right", marginTop:"-2px" }}> <ChevronRight/> </span>
             </Button>
             <hr style={{ width:"87%", borderBottom:"solid #E1DFDF 0.5px", float:"right",  }}/>
             <Button onClick={ ()=>this.props.activarMiInventario() } className="botonMenuPrincipalHome" size="lg" block>
-              <span className="itemMenuPrincipal" ><Box size="20" />  &nbsp; Mis Inventario</span>
+              <span className="itemMenuPrincipal" ><Box size="20" />  &nbsp; Inventario</span>
               <span style={{ float:"right", marginTop:"-2px" }}> <ChevronRight/> </span>
             </Button>
             <hr style={{ width:"87%", borderBottom:"solid #E1DFDF 0.5px", float:"right",  }}/>
