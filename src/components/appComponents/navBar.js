@@ -37,7 +37,7 @@ class NavBar extends Component {
                   ?  <Navbar style={{backgroundColor:"#0A369C"}} variant="dark">
                      <Navbar.Brand href="#home"> <ChevronLeft onClick={()=>this.props.volverAlHome()} size={25}/> Bitacora</Navbar.Brand>
                      <Nav className="mr-auto"></Nav>
-                     <Edit style={{ color:"white" }}/>
+                     <Edit onClick={()=>this.props.activarModalCreacionTarea(true)} style={{ color:"white" }}/>
                      </Navbar>   
                   :null
                }

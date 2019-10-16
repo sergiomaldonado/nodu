@@ -22,3 +22,28 @@
     margin-top: -56px;
     color:white;
 }
+
+.modalCreacionDeTarea {
+    height: 100%;
+    width: 100%;
+    background-color:white;
+    position: fixed;
+    z-index: 99999;
+    margin-top: -56px;
+    color:black;
+    animation-duration: 0.3s;
+  animation-name: slidein;
+  overflow: scroll;
+}
+
+@keyframes slidein {
+    from {
+      margin-top: 1200px;
+     
+    }
+  
+    to {
+      margin-top: 0px;
+   
+    }
+  }

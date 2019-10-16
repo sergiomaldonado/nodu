@@ -5,6 +5,7 @@ import BotonToggle from './bitacoraComponents/botonToggle'
 import AcordeonInfomacionDiaria from './bitacoraComponents/acordeonDatosInfomacionDiaria'
 import AcordeonInfomacionSemanal from './bitacoraComponents/acordeonDatosInformacionSemanal'
 import ModalConfirmacionTarea from './bitacoraComponents/modalConfirmacionTarea'
+import ModalCreacionDeTarea from './bitacoraComponents/modalCreacionDeTarea'
  const estadoInicial = {
    modalDeConfirmacionActivada:false,
    modalTareaCompletada:false,
@@ -43,6 +44,14 @@ class Bitacora extends Component {
   render() {
        return(      
           <div>
+             {
+               this.props.estadoDeModalCrearTarea === true
+               ?<ModalCreacionDeTarea
+               desactivarModal={()=>this.desactivarModalCreacionTarea()}
+               cerrarModalCrearTarea={(state)=>this.props.cerrarModalCrearTarea(state) }
+               />
+               :null
+             }
              {
                this.state.modalDeConfirmacionActivada === true
                ?<ModalConfirmacionTarea 

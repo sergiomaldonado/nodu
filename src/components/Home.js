@@ -30,7 +30,8 @@ const estadoInicial = {
   tiendaActivado:false,
   tiendaNavContent:false,
   escuelaActivado:false,
-  escuelaNavContent:false
+  escuelaNavContent:false,
+  modalCreacionDeTarea:false
 
 }
 
@@ -120,13 +121,24 @@ class HomePage extends Component {
       ...estadoInicialDeLasVistas
     })
   }
+  activarModalCreacionTarea = (estado) =>{
+
+    this.setState({
+      modalCreacionDeTarea:estado
+    })
+
+  }
+  cerrarModalCrearTarea = (state) =>{
+    this.setState({
+      modalCreacionDeTarea:state
+    })
+
+  }
 
   render() {
        return(
-          <div>
-              
+          <div> 
             {
-              
               /** Aqui se gestiona el contenido de la barra de navegacion superior, el contenido cambia segun
               la vista que esta activada, se para por propiedades los parametros al componente hijo */
               
@@ -139,6 +151,7 @@ class HomePage extends Component {
               tiendaNavContent={this.state.tiendaNavContent}
               escuelaNavContent={this.state.escuelaNavContent}
               volverAlHome={()=>this.volverAlHome()}
+              activarModalCreacionTarea={(estado)=>this.activarModalCreacionTarea(estado)}
               />
             }
               
@@ -171,7 +184,7 @@ class HomePage extends Component {
 
               /** Activa la vista Bitacora */
               this.state.bitacoraActivado === true && this.state.homeActivado === false
-              ?<Bitacora/>
+              ?<Bitacora estadoDeModalCrearTarea={this.state.modalCreacionDeTarea} cerrarModalCrearTarea={(state)=>this.cerrarModalCrearTarea(state)}/>
               /** Activa la vista Mis Parcelas */
               :this.state.misParcelasActivado === true && this.state.homeActivado === false
               ?<MisParcelas/>
