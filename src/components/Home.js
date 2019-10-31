@@ -31,7 +31,10 @@ const estadoInicial = {
   tiendaNavContent:false,
   escuelaActivado:false,
   escuelaNavContent:false,
-  modalCreacionDeTarea:false
+  modalCreacionDeTarea:false,
+  dentroDeParcela:false,
+  nombreParcela:null,
+  vistaParcelaActivada:true
 
 }
 
@@ -50,7 +53,8 @@ const estadoInicialDeLasVistas = {
   tiendaActivado:false,
   tiendaNavContent:false,
   escuelaActivado:false,
-  escuelaNavContent:false
+  escuelaNavContent:false,
+  
 }
 
 class HomePage extends Component {
@@ -134,6 +138,22 @@ class HomePage extends Component {
     })
 
   }
+  activarParcela = (nombreParcela) =>{
+    this.setState({
+      dentroDeParcela:true,
+      misParcelasNavContent:false,
+      nombreParcela:nombreParcela,
+      vistaParcelaActivada:false
+    })
+  }
+  volverAParcelas = () =>{
+    this.setState({
+      dentroDeParcela:false,
+      misParcelasNavContent:true,
+      nombreParcela:null,
+      vistaParcelaActivada:true
+    })
+  }
 
   render() {
        return(
@@ -152,6 +172,9 @@ class HomePage extends Component {
               escuelaNavContent={this.state.escuelaNavContent}
               volverAlHome={()=>this.volverAlHome()}
               activarModalCreacionTarea={(estado)=>this.activarModalCreacionTarea(estado)}
+              dentroDeParcela={this.state.dentroDeParcela}
+              volverAParcelas={ ()=>this.volverAParcelas() }
+              nombreParcela={this.state.nombreParcela}
               />
             }
               
@@ -187,7 +210,11 @@ class HomePage extends Component {
               ?<Bitacora estadoDeModalCrearTarea={this.state.modalCreacionDeTarea} cerrarModalCrearTarea={(state)=>this.cerrarModalCrearTarea(state)}/>
               /** Activa la vista Mis Parcelas */
               :this.state.misParcelasActivado === true && this.state.homeActivado === false
-              ?<MisParcelas/>
+              ?<MisParcelas 
+              activarParcela={(nombreParcela)=>this.activarParcela(nombreParcela)}
+              vistaParcelaActivada={ this.state.vistaParcelaActivada }
+              
+              />
               /** Activa la vista Mi Inventario */
               :this.state.miInventarioActivado === true && this.state.homeActivado === false
               ?<MiInventario/>

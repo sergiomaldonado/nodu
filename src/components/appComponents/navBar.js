@@ -75,6 +75,23 @@ class NavBar extends Component {
                   :null
                }
 
+
+               {
+                  this.props.dentroDeParcela === true
+                  ?  <Navbar style={{backgroundColor:"#0A369C"}} variant="dark">
+                     <Navbar.Brand href="#home"><ChevronLeft onClick={()=>this.props.volverAParcelas(false)} size={25}/>
+                            
+                         {this.props.nombreParcela}
+
+                     </Navbar.Brand>
+                     <Nav className="mr-auto"></Nav>
+                     </Navbar>   
+                  :null
+               }
+
+
+
+
                {/*this.props.regresarIcon == true ?<ChevronLeft/>:null <SingOutButton></SingOutButton>*/}
 
           </div>

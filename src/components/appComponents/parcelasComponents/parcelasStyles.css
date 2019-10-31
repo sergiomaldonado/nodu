@@ -1,0 +1,31 @@
+.cardParcelas {
+    overflow: hidden;
+    min-height: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+    /* Mask: */
+    background: #FFFFFF;
+    box-shadow: 0 1px 4px 0 rgba(175, 175, 175, 0.50);
+    border-radius: 8px;
+    /* Bitmap: */
+}
+
+.parrafoNombre {
+    margin-Top: 0.3em;
+    margin-Bottom: 3px;
+    font-Weight: 400;
+    font-Size: 15px;
+    color: #01177C;
+}
+
+.subParrafos {
+    font-Size: 10px;
+    margin: 0px;
+}
+
+.subParrafoPrincipal {
+    font-Size: 10px;
+    margin: 0px;
+    color: #4FA716;
+    font-Weight: 400;
+}
